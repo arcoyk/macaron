@@ -8,13 +8,21 @@ python play.py michael
 
 # Usage
 
+1. Clone
 ```
 git clone git@github.com:arcoyk/macaron.git
 ```
 
-Rewrite the root
+2. Create a folder with A LOT OF songs you like.
+
+3. Edit the root to your folder
 ```play.py
-# root = '/a/folder/of/songs/you/like/'
+root = '/a/folder/of/songs/you/like/'
+```
+
+4. Play
+```
+python play.py michael
 ```
 
 # Why
