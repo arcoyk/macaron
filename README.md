@@ -27,14 +27,14 @@ python play.py michael
 
 # Why
 
-Macaron enable you to play BGM while coding without moving your hand from terminal.
-Macaron creates instant playlist for example,
+macaron enables you to enjoy BGM from your terminal.
+macaron creates instant playlist. For example,
 
 ```
-python play.py micheal
+python play.py michael
 ```
 
-Will create a playlist of (possibly) Micheal Jackson. Current version is capable of finding a song by matching...
+will create a playlist of (possibly) Michaael Jackson. Current version is capable of finding songs by matching arguments to...
 
 - the part of the file name (ex. 'michael' matches 'michael_jackson.mp3')
 - upper case name by either upper case of lower case name (ex. 'Michael Jackson.mp3' can be found either by 'Michael' or 'michael'
@@ -42,6 +42,12 @@ Will create a playlist of (possibly) Micheal Jackson. Current version is capable
 but unintentionally...
 
 - 'michael' matches 'michael douglas.mp3'
+
+You can also set mutliple arguments.
+```
+python play.py michael justin
+# Will create a playlist of (possibly) Michael Jackson and Justin Beaver
+```
 
 # extension
 
