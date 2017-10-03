@@ -49,7 +49,7 @@ python play.py michael justin
 # Will create a playlist of (possibly) Michael Jackson and Justin Beaver
 ```
 
-# extension
+# Extension
 
 - as a backend of voice controled AI
 
