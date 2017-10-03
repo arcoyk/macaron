@@ -62,7 +62,8 @@ def play(playlist, mix=False, loop=False):
     random.shuffle(playlist)
   cmd = ' && afplay '.join(playlist)
   for music in playlist:
-    print('🎵  Now Playing...', music, "in", len(playlist), "songs in instant playlist...")
+    # print('🎵  Now Playing...', music, "in", len(playlist), "songs in instant playlist...")
+    print('🎵 Now Playing..') 
     call(['afplay', music])
   if loop:
     play(playlist, mix, loop)
