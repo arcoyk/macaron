@@ -28,7 +28,7 @@ python play.py michael
 
 5. Makes it easier😎⚡️
 ```
-echo "alias play='python /the/path/you/cloned/macaron/play.py'" >> ~/.bashrc"
+echo "alias play='python /the/path/you/cloned/macaron/play.py' >> ~/.bashrc"
 source ~/.bashrc
 play michael
 ```
