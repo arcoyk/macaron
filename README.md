@@ -2,10 +2,10 @@
 is a python script to play musics in a local folder through terminal for MacOS.
 
 ```
-# Save Michael's songs in your favorite folder.
+# Save songs in your favorite folder.
 # Rewrite 'root' (in play.py) to the folder.
 python play.py michael
-# will play songs!
+# will play michael's songs (if they exist in the folder)!
 ```
 
 # Usage
