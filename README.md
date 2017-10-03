@@ -1,10 +1,11 @@
-# macaron 🎵🎵🎵🎵🎵🎵🎵🎵🎵🎵🎵🎵🎵🎵🎵🎵
-is a python script to play music through terminal for MacOS.
+# Macaron 🎵🎵🎵🎵🎵🎵🎵🎵🎵🎵🎵🎵🎵🎵🎵🎵
+is a python script to play musics in a local folder through terminal for MacOS.
 
 ```
+# Save Michael's songs in your favorite folder.
+# Rewrite 'root' (in play.py) to the folder.
 python play.py michael
-> Playing 'Michael Jackson Song.mp3'
-# will play the song if you have that song in local.
+# will play songs!
 ```
 
 # Usage
@@ -33,32 +34,36 @@ source ~/.bashrc
 play michael
 ```
 
-# Why
+# Details of Instant Playlist
 
-macaron enables you to enjoy BGM from your terminal.
-macaron creates instant playlist. For example,
+Instant Playlist is a list of path to music files.
+macaron creates Instant Playlist through commands. For example,
 
 ```
 python play.py michael
+# Now playing 1 of 12 Michael's songs..
 ```
 
-will create a playlist of (possibly) Michaael Jackson. Current version is capable of finding songs by matching arguments to...
+will create a playlist of Michale's songs if you have his songs.
+Here, 'michael' hits songs whose title has 'michael' in any part of it (lower case, upper case).
+For example,
 
-- the part of the file name (ex. 'michael' matches 'michael_jackson.mp3')
-- upper case name by either upper case of lower case name (ex. 'Michael Jackson.mp3' can be found either by 'Michael' or 'michael'
+```
+python play.py michael
+# Now playing michael.mp3 in ['michael.mp3', 'michael_jackson.mp3', 'michaeljackson.mov', 'George_Michael.mp3', 'Michael.mp3', 'MICHAEL.mp4']
+```
 
-but unintentionally...
-
-- 'michael' matches 'michael douglas.mp3'
-
-You can also set mutliple arguments.
+You can also set multiple arguments.
 ```
 python play.py michael justin
-# Will create a playlist of (possibly) Michael Jackson and Justin Beaver
+# Now playing michael.mp3 in ['michael.mp3', 'michael_jackson.mp3', 'michaeljackson.mov', 'George_Michael.mp3', 'Michael.mp3', 'MICHAEL.mp4', 'justin.mp3']
 ```
 
-# Extension
+Or you can remove 'George_Michael.mp3'.
 
-- as a backend of voice controled AI
+```
+python play.py michael justin -george
+# Now playing michael.mp3 in ['michael.mp3', 'michael_jackson.mp3', 'michaeljackson.mov', 'Michael.mp3', 'MICHAEL.mp4', 'justin.mp3']
+```
 
 🎵🎵🎵🎵🎵🎵🎵🎵🎵🎵🎵🎵🎵🎵🎵🎵🎵🎵🎵🎵
