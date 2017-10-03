@@ -1,9 +1,10 @@
 # macaron 🎵🎵🎵🎵🎵🎵🎵🎵🎵🎵🎵🎵🎵🎵🎵🎵
-afplay command interface of python
+is a python script to play music through terminal for MacOS.
 
 ```
 python play.py michael
 > Playing 'Michael Jackson Song.mp3'
+# will play the song if you have that song in local.
 ```
 
 # Usage
@@ -23,6 +24,13 @@ root = '/a/folder/of/songs/you/like/'
 4. Play
 ```
 python play.py michael
+```
+
+5. Makes it easier😎⚡️
+```
+echo "alias play='python /the/path/you/cloned/macaron/play.py'" >> ~/.bashrc"
+source ~/.bashrc
+play michael
 ```
 
 # Why
