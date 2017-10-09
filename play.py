@@ -54,17 +54,37 @@ def keywords():
       rst.append(word)
   return rst
 
+def show_playlist(playlist):
+  print(u"🎵 Macaron:", len(playlist), "musics found!")
+  for music in playlist:
+    print(wrap(path2title(music)))
+  print()
+
+def path2title(path):
+  return path.split('/')[-1]
+
+def wrap(s):
+  return "[[" + s + "]]"
+
+def is_multi(a):
+  return ['s',''][int(len(a) * 2 == 1)]
+
+def show_indicator(music, playlist):
+  print(u"🎵 Now Playing...", wrap(path2title(music)))
+  print("in ", len(playlist), " music%s..." % is_multi(playlist))
+  print()
+
 def play(playlist, mix=False, loop=False):
   if not playlist:
     print(keywords())
     exit()
   if mix:
     random.shuffle(playlist)
+  show_playlist(playlist)
   cmd = ' && afplay '.join(playlist)
   for music in playlist:
-    # print('🎵  Now Playing...', music, "in", len(playlist), "songs in instant playlist...")
-    print('🎵 Now Playing..') 
-    call(['afplay', music])
+    show_indicator(music, playlist)
+    call(['caffeinate', '-i', 'afplay', music])
   if loop:
     play(playlist, mix, loop)
 
