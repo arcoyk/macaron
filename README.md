@@ -17,9 +17,9 @@ git clone git@github.com:arcoyk/macaron.git
 
 2. Create a folder with A LOT OF songs you like.
 
-3. Edit the root to your folder
-```play.py
-root = '/a/folder/of/songs/you/like/'
+3. Edit config.ini
+```config.ini
+music_dir = '/a/folder/of/songs/you/like/'
 ```
 
 4. Play
@@ -62,7 +62,7 @@ python play.py michael justin
 Or you can remove 'George_Michael.mp3'.
 
 ```
-python play.py michael justin -george
+python play.py michael justin --dislikes george
 # Now playing michael.mp3 in ['michael.mp3', 'michael_jackson.mp3', 'michaeljackson.mov', 'Michael.mp3', 'MICHAEL.mp4', 'justin.mp3']
 ```
 
