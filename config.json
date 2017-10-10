@@ -1,0 +1,9 @@
+{
+  "music_dir": "/users/yui/desktop/movs/", 
+  "loop": true,
+  "mix": true,
+  "alias": {
+    "banana": ["バナナ"],
+    "utada": ["宇多田"]
+  }
+}
