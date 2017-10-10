@@ -136,15 +136,12 @@ def merge(config, option):
   return config
 
 config = load_config('config.json')
-# args = sys.argv[1:]
-args = ['python', 'banana', '--loop', 'utada', '--nomix', '--dislikes', 'Utada']
+args = sys.argv[1:]
+# args = ['python', 'banana', '--loop', 'utada', '--nomix', '--dislikes', 'Utada']
 # Consider args as a manipulation for default params
 # to enable easy args (e.g. '--nomix', not '--mix=false')
-option = parse_args(args[1:])
+option = parse_args(args)
 params = merge(config, option)
 mix, loop, playlist = instant_playlist(params)
-print(playlist)
-# play(playlist, mix, loop)
-
-
+play(playlist, mix, loop)
 
