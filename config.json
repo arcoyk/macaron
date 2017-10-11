@@ -4,6 +4,9 @@
   "mix": true,
   "alias": {
     "banana": ["バナナ"],
-    "utada": ["宇多田"]
+    "utada": ["宇多田"],
+    "fun": ["maroon", "feist"],
+    "classic": ["beethoven", "bach"],
+    "mood": ["gibri"]
   }
 }

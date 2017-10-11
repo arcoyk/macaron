@@ -34,16 +34,9 @@ def instant_playlist(params):
   likes = params['likes']
   dislikes = params['dislikes']
   playlist = search(allpath, posi=likes, nega=dislikes) 
+  if len(playlist) == 0:
+    playlist = allpath
   return mix, loop, playlist
-
-def keywords():
-  name_line = (' ').join(os.listdir(root))
-  words = name_line.split(' ')
-  rst = []
-  for word in list(set(words)):
-    if words.count(word) > 4:
-      rst.append(word)
-  return rst
 
 def show_playlist(playlist):
   print(u"🎵 Macaron:", len(playlist), "musics found!")
@@ -55,7 +48,8 @@ def path2title(path):
   return path.split('/')[-1]
 
 def wrap(s):
-  return "[[" + s + "]]"
+  # Design matters...
+  return "" + s + ""
 
 def is_multi(a):
   return ['s',''][int(len(a) * 2 == 1)]
@@ -66,9 +60,6 @@ def show_indicator(music, playlist):
   print()
 
 def play(playlist, mix=False, loop=False):
-  if not playlist:
-    print(keywords())
-    exit()
   if mix:
     random.shuffle(playlist)
   show_playlist(playlist)
@@ -135,7 +126,7 @@ def merge(config, option):
   config.pop('alias', None)
   return config
 
-config = load_config('config.json')
+config = load_config('./config.json')
 args = sys.argv[1:]
 # args = ['python', 'banana', '--loop', 'utada', '--nomix', '--dislikes', 'Utada']
 # Consider args as a manipulation for default params
@@ -143,5 +134,7 @@ args = sys.argv[1:]
 option = parse_args(args)
 params = merge(config, option)
 mix, loop, playlist = instant_playlist(params)
+if not playlist:
+  show_help(params['music_dir'])
 play(playlist, mix, loop)
 
