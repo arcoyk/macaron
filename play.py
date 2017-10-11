@@ -126,7 +126,10 @@ def merge(config, option):
   config.pop('alias', None)
   return config
 
-config = load_config('./config.json')
+path = os.path.realpath(__file__)
+path = path.split('/')[:-1] + ['config.json']
+path = '/'.join(path)
+config = load_config(path)
 args = sys.argv[1:]
 # args = ['python', 'banana', '--loop', 'utada', '--nomix', '--dislikes', 'Utada']
 # Consider args as a manipulation for default params
