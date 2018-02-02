@@ -3,6 +3,7 @@ import os
 import sys
 import random
 import json
+import datetime
 
 def load_config(config_path):
   with open(config_path) as f:
@@ -59,13 +60,28 @@ def show_indicator(music, playlist):
   print("in ", len(playlist), " music%s..." % is_multi(playlist))
   print()
 
+def show_config(mix, loop):
+  onoff = ['off', 'on']
+  print('mix = %s' % onoff[int(mix)])
+  print('loop = %s' % onoff[int(loop)])
+
+def show_lyrics(music):
+  try:
+    name = music.split('/')[-1].split('.')[0]
+    with open('./lyrics/' + name + '.txt') as f:
+      print(f.read())
+  except FileNotFoundError:
+    pass
+
 def play(playlist, mix=False, loop=False):
   if mix:
     random.shuffle(playlist)
   show_playlist(playlist)
+  show_config(mix, loop)
   cmd = ' && afplay '.join(playlist)
   for music in playlist:
     show_indicator(music, playlist)
+    show_lyrics(music)
     call(['caffeinate', '-i', 'afplay', music])
   if loop:
     play(playlist, mix, loop)

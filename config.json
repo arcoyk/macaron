@@ -4,9 +4,15 @@
   "mix": true,
   "alias": {
     "banana": ["バナナ"],
+    "shortbanana": ["宮沢さん", "weird-RigmYFcEkDE.mp4", "Chime", "オフィスのおばけ", "Bad Karma", "shocking"],
     "utada": ["宇多田"],
     "fun": ["maroon", "feist"],
     "classic": ["beethoven", "bach"],
-    "mood": ["gibri"]
+    "mood": ["gibri"],
+    "morning": ["Breakfast"],
+    "music": ["beethoven", "bach", "ryuichi.mp"],
+    "night": ["let it die", "Andata", "fullmoon", "Angel"],
+    "cool": ["fist love", "inside", "Distance", "Secret Heart", "Automatic", "norah", "calling"],
+    "high": ["stay", "maroon", "fox", "inside"]
   }
 }
