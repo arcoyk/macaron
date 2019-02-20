@@ -1,3 +1,5 @@
+# -*- coding: utf-8 -*-
+
 from subprocess import call
 import os
 import sys
@@ -26,6 +28,15 @@ def search(tars, posi=[], nega=[]):
       rst.append(tar)
   return rst
 
+def filter_filetype(playlist):
+  rst = []
+  valids = ['mov', 'mp4', 'mp3']
+  for p in playlist:
+    file_type = p.split('.')[-1]
+    if file_type in valids:
+      rst.append(p)
+  return rst
+
 def instant_playlist(params):
   # config overrides default
   # option overrides config
@@ -35,6 +46,7 @@ def instant_playlist(params):
   likes = params['likes']
   dislikes = params['dislikes']
   playlist = search(allpath, posi=likes, nega=dislikes) 
+  playlist = filter_filetype(playlist)
   if len(playlist) == 0:
     playlist = allpath
   return mix, loop, playlist
@@ -67,8 +79,8 @@ def show_config(mix, loop):
 
 def show_lyrics(music):
   try:
-    name = music.split('/')[-1].split('.')[0]
-    with open('./lyrics/' + name + '.txt') as f:
+    path = '.'.join(music.split('.')[:-1]) + '.txt'
+    with open(path) as f:
       print(f.read())
   except FileNotFoundError:
     pass
@@ -155,5 +167,8 @@ params = merge(config, option)
 mix, loop, playlist = instant_playlist(params)
 if not playlist:
   show_help(params['music_dir'])
+import datetime
+with open('log.txt', 'a') as f:
+  f.write(str(datetime.datetime.now()) + '\n')
 play(playlist, mix, loop)
 
